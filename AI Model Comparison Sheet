@@ -1,0 +1,134 @@
+# AI Model Comparison Sheet - Department Guide
+
+## Overview
+This comparison evaluates four AI models across key departmental use cases: **GPT-4o**, **Claude Sonnet 4**, **Gemini 2.5 Flash**, and **DeepSeek-R1:7B (Ollama)**.
+
+### Rating Scale
+- ⭐⭐⭐⭐ **Excellent** - Outstanding performance, production-ready
+- ⭐⭐⭐ **Good** - Strong performance with minor limitations
+- ⭐⭐ **Basic/Limited** - Functional but with notable constraints
+- ⭐ **Not Supported** - Poor performance or lacks capability
+
+---
+
+## Code Generation (AppDev)
+
+| Model | Performance | Rating | Latency | Comments |
+|-------|-------------|---------|---------|----------|
+| **GPT-4o (March 2025)** | Code Quality, Debugging, Multi-language | ⭐⭐⭐⭐ | 0.30s | Intelligence Score: 50. Excellent at complex algorithms, strong debugging capabilities. Supports 40+ languages. Fast response time. |
+| **Claude 3.7 Sonnet** | Code Quality, Architecture, Refactoring | ⭐⭐⭐⭐ | 1.06s | Intelligence Score: 48. Superior code generation with excellent explanations. Best for complex refactoring tasks and architectural decisions. |
+| **Gemini 2.5 Flash** | Speed, SWE-bench Performance | ⭐⭐⭐⭐ | 6.32s | Intelligence Score: 48. Fastest output speed at 293.3 tokens/s. Excellent for rapid prototyping despite higher latency. |
+| **DeepSeek-R1:7B** | Local Deployment, Reasoning | ⭐⭐⭐ | 3.70s | Intelligence Score: 60. Strong reasoning capabilities for a 7B model. Good for privacy-sensitive projects. Performance approaches larger models. |
+
+---
+
+## Data Analysis & SQL Generation (Data)
+
+| Model | Performance | Rating | Latency | Comments |
+|-------|-------------|---------|---------|----------|
+| **GPT-4o (March 2025)** | Complex Queries, Data Visualization | ⭐⭐⭐⭐ | 0.30s | Fast response time. Excellent at complex JOIN operations, window functions, and performance optimization. Strong integration with visualization libraries. |
+| **Claude 3.7 Sonnet** | Query Optimization, Documentation | ⭐⭐⭐⭐ | 1.06s | Outstanding at explaining query logic and optimization strategies. Excellent for database schema design and stored procedures. |
+| **Gemini 2.5 Flash** | Speed, Multi-database Support | ⭐⭐⭐ | 6.32s | Highest output speed at 293.3 tokens/s. Good for standard analytics queries across multiple SQL dialects. |
+| **DeepSeek-R1:7B** | Local Analytics, Privacy | ⭐⭐ | 3.70s | Basic SQL generation capabilities. Suitable for simple queries and privacy-sensitive data analysis. Limited performance on complex analytical tasks. |
+
+---
+
+## Infrastructure Automation (DevOps)
+
+| Model | Performance | Rating | Latency | Comments |
+|-------|-------------|---------|---------|----------|
+| **GPT-4o (March 2025)** | Terraform, K8s, CI/CD | ⭐⭐⭐⭐ | 0.30s | Comprehensive support for IaC tools. Excellent at creating complex Terraform modules and Kubernetes manifests. Fast response time ideal for DevOps workflows. |
+| **Claude 3.7 Sonnet** | Script Quality, Documentation | ⭐⭐⭐⭐ | 1.06s | Superior shell scripting and automation. Excellent at creating well-documented, maintainable infrastructure code. Best for complex deployment scenarios. |
+| **Gemini 2.5 Flash** | Cloud-native, Speed | ⭐⭐⭐ | 6.32s | Fast generation of cloud automation scripts. Good for GCP-specific tasks and containerization. High output speed compensates for latency. |
+| **DeepSeek-R1:7B** | Basic Automation, Local | ⭐⭐ | 3.70s | Limited infrastructure automation capabilities. Basic bash/PowerShell scripting. Suitable for simple automation tasks and learning scenarios. |
+
+---
+
+## Technical Specifications & Deployment
+
+| Model | API Access | Cost (Input/Output) | Speed (tokens/s) | Latency (TTFT) | Local Deploy | Comments |
+|-------|-------------|---------------------|------------------|----------------|--------------|----------|
+| **GPT-4o (March 2025)** | OpenAI API | $7.50/1M tokens | 164.2 | 0.30s | ❌ | Industry standard, extensive ecosystem, regular updates |
+| **Claude 3.7 Sonnet** | Anthropic API | $6.00/1M tokens | 77.0 | 1.06s | ❌ | Best explanation quality, ethical AI focus, excellent for complex reasoning |
+| **Gemini 2.5 Flash** | Google AI API | $0.26/1M tokens | 293.3 | 6.32s | ❌ | Most cost-effective, integrated with Google ecosystem, fastest output speed |
+| **DeepSeek-R1:7B** | Ollama REST API | Free | 24.6 | 3.70s | ✅ | Privacy-focused, customizable, requires local GPU resources (8GB+ VRAM recommended) |
+
+## Performance Benchmarks & Intelligence Scores
+
+Based on latest Artificial Analysis data (July 2025):
+
+| Model | Intelligence Score | Output Speed (tokens/s) | Latency (TTFT) | Context Window | Rank Position |
+|-------|-------------------|-------------------------|----------------|----------------|---------------|
+| **DeepSeek-R1** | 60 | 24.6 | 3.70s | 128k | #11 |
+| **GPT-4o (March 2025)** | 50 | 164.2 | 0.30s | 128k | #25 |
+| **Claude 3.7 Sonnet** | 48 | 77.0 | 1.06s | 200k | #29 |
+| **Gemini 2.5 Flash** | 48 | 293.3 | 6.32s | 1M | #28 |
+
+---
+
+## Use Case Recommendations
+
+### **For Production AppDev:**
+- **Primary:** Claude 3.7 Sonnet (code quality) + GPT-4o (fast debugging)
+- **Budget-conscious:** Gemini 2.5 Flash (best cost/performance)
+- **Privacy-sensitive:** DeepSeek-R1:7B (highest intelligence score locally)
+
+### **For Data Analysis:**
+- **Primary:** GPT-4o (fast complex queries) + Claude 3.7 Sonnet (documentation)
+- **High-volume:** Gemini 2.5 Flash (293.3 tokens/s output speed)
+- **Sensitive data:** DeepSeek-R1:7B (local deployment)
+
+### **For DevOps Automation:**
+- **Primary:** GPT-4o (0.30s latency + comprehensive tooling) + Claude 3.7 Sonnet (documentation)
+- **Cloud-focused:** Gemini 2.5 Flash (cost-effective at $0.26/1M tokens)
+- **On-premise:** DeepSeek-R1:7B (free local deployment)
+
+---
+
+## Ollama Integration Guide
+
+### DeepSeek-R1:7B Setup
+```bash
+# Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Pull DeepSeek-R1 model
+ollama pull deepseek-r1:7b
+
+# Run model
+ollama run deepseek-r1:7b
+```
+
+### REST API Usage
+```bash
+# Example API call
+curl -X POST http://localhost:11434/api/generate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "deepseek-r1:7b",
+    "prompt": "Write a Python function to calculate fibonacci numbers",
+    "stream": false
+  }'
+```
+
+### System Requirements
+- **Minimum:** 8GB RAM, 4GB VRAM
+- **Recommended:** 16GB RAM, 8GB VRAM
+- **Storage:** 4GB for model weights
+
+---
+
+## Summary & Recommendations
+
+**Best Overall Performance:** DeepSeek-R1 (Intelligence Score: 60) + GPT-4o (Latency: 0.30s) for comprehensive coverage
+**Best Value:** Gemini 2.5 Flash at $0.26/1M tokens with 293.3 tokens/s output speed
+**Best Privacy:** DeepSeek-R1:7B with highest intelligence score (60) and local deployment
+**Best Hybrid Approach:** Use GPT-4o for time-sensitive tasks, Claude 3.7 Sonnet for quality, Gemini 2.5 Flash for volume, and DeepSeek-R1:7B for privacy-critical work
+
+### Cost-Performance Analysis:
+- **DeepSeek-R1**: $0.96/1M tokens, 60 intelligence score = Best value for intelligence
+- **Gemini 2.5 Flash**: $0.26/1M tokens, 293.3 tokens/s = Best throughput value
+- **GPT-4o**: $7.50/1M tokens, 0.30s latency = Best for immediate responses
+- **Claude 3.7 Sonnet**: $6.00/1M tokens, 48 intelligence score = Best quality-to-cost ratio
+
+*Data Source: Artificial Analysis Leaderboard - Last Updated: July 2025*
