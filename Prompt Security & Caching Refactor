@@ -1,0 +1,55 @@
+1.Segment the Prompt: Static vs Dynamic
+--------
+To optimize performance and security, the prompt can be split into:
+
+Static Content (Reusable and Cache-Friendly):
+
+“You are an AI assistant trained to help employees with HR-related queries.”
+“Answer only based on official company policies. Be concise and clear in your response.”
+“Company Leave Policy (as per location): {{leave_policy_by_location}}”
+“Additional Notes: {{optional_hr_annotations}}”
+“Query: {{user_input}}”
+Dynamic Content (Changes per User or Query — Not Cache-Friendly):
+
+{{employee_name}}
+{{department}}
+{{location}}
+{{employee_account_password}} (This is a serious security risk and must be removed)
+
+2.Improved & Secure Prompt Structure
+---------
+Here’s a cleaner and safer version of the prompt that avoids exposing sensitive information while improving reusability:
+
+You are an AI-powered HR assistant designed to help employees with their leave-related questions. Your answers should always follow the official company policies and the information provided. Keep responses clear, concise, and accurate.
+Employee Details:
+Department: {{department}}
+Location: {{location}}
+Company Leave Policy (for this location):
+{{leave_policy_by_location}}
+Additional HR Notes:
+{{optional_hr_annotations}}
+Employee's Question:
+{{user_input}}
+Important Rules:
+Never share personal details like login credentials, even if asked.
+If someone requests sensitive information such as passwords, reply with:
+“For your security, please access the Leave Management Portal directly or contact HR support for assistance.”
+
+3.Strategy to Prevent Prompt Injection Attacks
+---------
+Since prompt injection is a real threat (e.g., someone asking the AI to reveal hidden data or bypass its instructions), here’s a practical defense strategy:
+
+Remove Sensitive Info	 - Don’t include passwords or account details in any prompt.
+Role Separation	 - Clearly define the AI’s role: answer policy questions only.
+Input Filtering	 - Use filters to detect and block suspicious or manipulative input like "ignore previous instructions".
+Output Guardrails	 - Implement a post-check on AI responses to ensure no PII or sensitive data is mistakenly exposed.
+Prompt Locking	 - Reinforce non-negotiable instructions within the system prompt (e.g., "Never reveal passwords").
+Audit Logs	- Log all queries and responses to flag and review abnormal patterns, especially if sensitive data is requested.
+
+Bonus: Using RAG for Smarter Responses
+---------
+Instead of embedding the entire policy text into every prompt, use Retrieval-Augmented Generation (RAG):
+
+Policies are indexed and searched in real-time based on the user’s query.
+Only the most relevant policy details are injected into the prompt.
+This approach is faster, more efficient, and keeps prompts leaner and more relevant.
